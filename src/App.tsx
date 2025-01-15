@@ -3,6 +3,7 @@ import Header from "./Header";
 import Content, { Item } from "./Content";
 import Footer from "./Footer";
 import AddItem from "./AddItem";
+import SearchItem from "./SearchItem";
 
 function App() {
   const [items, setItems] = useState(
@@ -10,6 +11,7 @@ function App() {
   );
 
   const [newItem, setNewItem] = useState("");
+  const [search, setSearch] = useState("");
 
   const setAndSaveItems = (newItems: Item[]) => {
     setItems(newItems);
@@ -49,8 +51,11 @@ function App() {
   return (
     <div className="min-h-screen flex flex-col justify-between items-center bg-slate-700">
       <Header title="To Do Today" />
+      <SearchItem search={search} setSearch={setSearch} />
       <Content
-        items={items}
+        items={items.filter((item: Item) =>
+          item.item.toLowerCase().includes(search.toLowerCase())
+        )}
         handleCheck={handleCheck}
         handleDelete={handleDelete}
       />
