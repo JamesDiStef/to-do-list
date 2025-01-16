@@ -10,7 +10,7 @@ function App() {
   );
 
   const [newItem, setNewItem] = useState("");
-  const [search, setSearch] = useState("");
+  // const [search, setSearch] = useState("");
 
   const setAndSaveItems = (newItems: Item[]) => {
     setItems(newItems);
