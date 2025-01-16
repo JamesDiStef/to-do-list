@@ -22,9 +22,7 @@ function App() {
     const id = items.length ? items[items.length - 1].id + 1 : 1;
     const myNewItem = { id, checked: false, item };
     const listItems = [...items, myNewItem];
-    console.log(listItems);
     setAndSaveItems(listItems);
-    console.log(items);
   };
 
   const handleCheck = (id: number) => {
@@ -35,7 +33,6 @@ function App() {
   };
 
   const handleDelete = (id: number) => {
-    console.log(id);
     const listItems = items.filter((item: { id: number }) => {
       return item.id !== id;
     });
@@ -53,9 +50,10 @@ function App() {
       <Header title="To Do Today" />
       <SearchItem search={search} setSearch={setSearch} />
       <Content
-        items={items.filter((item: Item) =>
-          item.item.toLowerCase().includes(search.toLowerCase())
-        )}
+        // items={items.filter((item: Item) =>
+        //   item.item.toLowerCase().includes(search.toLowerCase())
+        // )}
+        items={items}
         handleCheck={handleCheck}
         handleDelete={handleDelete}
       />
