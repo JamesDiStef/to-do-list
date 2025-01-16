@@ -1,12 +1,7 @@
-interface Props {
-  length: any;
-}
-
-const Footer = ({ length }: Props) => {
+const Footer = () => {
   const today = new Date();
   return (
-    <footer className="m-20">
-      {length > 1 ? <p>{length} List Items</p> : null}
+    <footer className="mt-20 mb-5">
       <p>Copyright &copy; {today.getFullYear()}</p>
     </footer>
   );

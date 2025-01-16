@@ -8,6 +8,7 @@ interface Props {
 }
 
 const ItemList = ({ items, handleCheck, handleDelete }: Props) => {
+  if (items[0].item === null) return <div>Add some items!</div>;
   return (
     <ul className="list-none ml-12 mx-auto text-2xl">
       {items.map((item) => (
