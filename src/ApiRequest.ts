@@ -1,4 +1,8 @@
-const apiRequest = async (url = "", optionsObj = null, errMsg = null) => {
+const apiRequest = async (
+  url = "",
+  optionsObj: any = null,
+  errMsg: any = null
+) => {
   try {
     const response = await fetch(url, optionsObj);
     if (!response.ok) throw Error("Please reload app");
