@@ -1,4 +1,4 @@
-import React, { ReactNode, useEffect, useState } from "react";
+import { ReactNode, useEffect, useState } from "react";
 import AddItem from "./AddItem";
 import apiRequest from "./ApiRequest";
 import Content from "./Content";
@@ -108,7 +108,7 @@ const TodoPage = () => {
       <SearchItem search={search} setSearch={setSearch} />
       <main>
         {isLoading && <p>Loading Items...</p>}
-        {fetchError && <p>{`${fetchError}`}</p>}
+        {/* {fetchError && <p>{`${fetchError}`}</p>} */}
         {!fetchError && !isLoading && (
           <Content
             items={items.filter((item: Item) =>

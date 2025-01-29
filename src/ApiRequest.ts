@@ -7,7 +7,7 @@ const apiRequest = async (
     const response = await fetch(url, optionsObj);
     if (!response.ok) throw Error("Please reload app");
   } catch (err) {
-    errMsg = err.message;
+    // errMsg = err as Object.message;
   } finally {
     return errMsg;
   }
