@@ -14,7 +14,7 @@ export interface Item {
 
 const Content = ({ items, handleCheck, handleDelete }: Props) => {
   return (
-    <main>
+    <>
       {items.length ? (
         <ItemList
           items={items}
@@ -24,7 +24,7 @@ const Content = ({ items, handleCheck, handleDelete }: Props) => {
       ) : (
         <p>Empty</p>
       )}
-    </main>
+    </>
   );
 };
 
